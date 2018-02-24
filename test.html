@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>分拣工具</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+	<link href="fanyi-newweb.min.css" rel="stylesheet" type="text/css"/>
+
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+
+<!--	<input type="text" name="s" style="height:424px;width:424px">-->
+
+<!-- <textarea id="inputOriginal" class="input__original__area" placeholder="请输入你要翻译的文字或网址" style="font-size: 24px; line-height: 30px; height: 156px; overflow: hidden;resize:none;">
+</textarea>
+-->
+
+<!--
+<div class="fanyi__input__bg" style="height: 500px;width: 350px">
+
+	<textarea id="inputOriginal" class="input__original__area" placeholder="请输入你要翻译的文字" style="font-size: 24px; line-height: 30px;height: 90%;"></textarea>
+          
+</div>
+-->
+
+
+
+<div class="fanyi" style="min-height: 288px;">
+        <div class="fanyi__operations">
+
+  
+        </div>
+        <div class="fanyi__input">
+            <div class="input__original">
+                <div class="fanyi__input__bg">
+
+   
+        
+                    <div id="inputOriginalCopy" class="input__original__area"></div>
+                    <textarea id="inputOriginal" class="input__original__area input__small__font" placeholder="请输入你要翻译的文字或网址" style="font-size: 14px; line-height: 18px; height: 288px; overflow: hidden;"></textarea>
+                    <div class="input__original__bar" style="visibility: visible;">
+                        <div class="input__original__bar--fonts">
+                            <span class="fonts__over">270</span>/<span class="fonts__limited">5000</span>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="fanyi__popularize">
+                    <a href="javascript:;" target="_blank" class="clog-js" data-clog="AD_TEXT_CLICK"></a>
+                </div>
+            </div>
+            <div class="input__target">
+                <div class="fanyi__input__bg" style="height: 360px">
+                    <div id="docLangTip" class="doc-lang-tip">选择翻译语言，然后点击翻译按钮，即可翻译文档</div>
+                    <div class="input__target__error" id="inputTargetError" style="display: none;"></div>
+                    <div id="transTarget" class="input__target__text input__target__text--small" style="height: 288px;"></div>
+                    <textarea id="transTargetArea" class="input__target__text"></textarea>
+            </div>
+        </div>
+   
+                                            </div>
+
+
+<script type="text/javascript">
+//需要解析的格式
+//装备种类
+var equipmentType = ['匕首'];
+
+
+
+	$(function(){
+		$('#inputOriginal').bind('input propertychange keyup', function(){
+			var inputtxt = $(this).val();
+			//字符串长度大于100时解析
+			if (100<inputtxt.length) {
+				analyticalData(inputtxt);
+			}
+		});
+
+
+		//解析的方法
+		function analyticalData(inputtxt){
+			var arr = inputtxt.split("\n");
+			alert(arr.length);
+		}
+	});
+</script>
+</body>
+</html>
